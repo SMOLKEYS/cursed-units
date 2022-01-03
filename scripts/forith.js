@@ -28,6 +28,8 @@ const forith = extend(UnitType, "forith", {
     cellRegion: Core.atlas.find("fortress-cell")
 });
 
+forith.constructor = () => extend(UnitEntity, {});
+
 forith.weapons.add(
     UnitTypes.zenith.weapons.get(0),
     UnitTypes.zenith.weapons.get(1),
