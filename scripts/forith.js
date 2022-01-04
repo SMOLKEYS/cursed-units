@@ -24,14 +24,14 @@ const forith = extend(UnitType, "forith", {
     lowAltitude: true,
     forceMultiTarget: true,
     range: 230,
-    region: Core.atlas.find("fortress"),
-    cellRegion: Core.atlas.find("fortress-cell")
 });
 
 forith.constructor = () => extend(UnitEntity, {});
 forith.defaultController = () => extend(FlyingAI, {});
 
 Events.on(ContentInitEvent, () => {
+    forith.region = Core.atlas.find("fortress-outline");
+    forith.cellRegion = Core.atlas.find("fortress-cell")
     forith.weapons.add(
         UnitTypes.zenith.weapons.get(0),
         UnitTypes.zenith.weapons.get(1),
